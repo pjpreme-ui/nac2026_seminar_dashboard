@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NAC2026 Executive Dashboard — 20 Mar 2026</title>
+<meta property="og:title" content="NAC2026 Executive Dashboard — 20 Mar 2026">
+<meta property="og:description" content="NAC2026 · สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.) อัปเดต: 20 มีนาคม 2569">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pjpreme-ui.github.io/nac2026_seminar_dashboard/">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
@@ -31,9 +35,9 @@
   --shadow:   0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
   --shadow-md:0 2px 8px rgba(0,0,0,.08), 0 8px 32px rgba(0,0,0,.06);
 }
- 
+
 * { margin:0; padding:0; box-sizing:border-box; }
- 
+
 body {
   font-family: 'IBM Plex Sans Thai', sans-serif;
   background: var(--bg);
@@ -42,7 +46,7 @@ body {
   font-size: 14px;
   line-height: 1.5;
 }
- 
+
 /* ── TOP BAR ── */
 .topbar {
   background: var(--navy);
@@ -104,10 +108,10 @@ body {
   color: #fff;
 }
 .topbar-btn.primary:hover { background: var(--copper2); }
- 
+
 /* ── LAYOUT ── */
 .page { padding: 28px 32px; max-width: 1400px; margin: 0 auto; }
- 
+
 /* ── SECTION HEADER ── */
 .section-hd {
   display: flex;
@@ -127,7 +131,7 @@ body {
   height: 1px;
   background: var(--border);
 }
- 
+
 /* ── UPLOAD ── */
 .upload-strip {
   background: var(--surface);
@@ -174,7 +178,7 @@ body {
   font-weight: 500;
   white-space: nowrap;
 }
- 
+
 /* ── MAPPER ── */
 .mapper {
   background: var(--surface);
@@ -228,7 +232,7 @@ body {
 .btn-navy:hover { background: var(--navy2); }
 .btn-ghost { background: none; border: 1px solid var(--border2); color: var(--muted); }
 .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
- 
+
 /* ── KPI CARDS ── */
 .kpi-row { display: grid; grid-template-columns: repeat(5,1fr); gap: 14px; margin-bottom: 28px; }
 .kpi {
@@ -261,7 +265,7 @@ body {
 .kpi-sub { font-size: 11px; color: var(--muted); margin-top: 6px; }
 .kpi-divider { width: 100%; height: 1px; background: var(--border); margin: 10px 0; }
 .kpi-trend { font-size: 11px; font-weight: 500; color: var(--muted); }
- 
+
 /* ── TOOLBAR ── */
 .toolbar {
   display: flex;
@@ -324,7 +328,7 @@ body {
   box-shadow: var(--shadow);
 }
 .filter-sel:focus { border-color: var(--navy); }
- 
+
 /* ── TABLE CARD ── */
 .card {
   background: var(--surface);
@@ -447,7 +451,7 @@ tbody tr:hover td { background: #F8F7F4; }
   box-shadow: 0 0 0 3px rgba(26,46,74,.08);
 }
 .no-data { text-align: center; padding: 40px; color: var(--muted); font-size: 13px; }
- 
+
 /* ── CHARTS ROW ── */
 .chart-row { display: grid; grid-template-columns: 1fr 340px; gap: 16px; }
 .chart-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; }
@@ -455,7 +459,7 @@ tbody tr:hover td { background: #F8F7F4; }
 .chart-hd-title { font-size: 12px; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: .8px; }
 .chart-hd-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
 .chart-body { padding: 20px; }
- 
+
 /* Bar chart */
 .bar-scroll { display: flex; align-items: flex-end; gap: 8px; height: 140px; overflow-x: auto; padding-bottom: 2px; }
 .bar-col { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 30px; gap: 4px; }
@@ -463,7 +467,7 @@ tbody tr:hover td { background: #F8F7F4; }
 .bar-r:hover { opacity: .7; }
 .bar-num { font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--navy); font-weight: 500; }
 .bar-lbl { font-size: 8px; color: var(--muted); text-align: center; line-height: 1.2; width: 28px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
- 
+
 /* Summary list */
 .sum-list { display: grid; gap: 8px; }
 .sum-row {
@@ -486,7 +490,7 @@ tbody tr:hover td { background: #F8F7F4; }
 .sum-row.blue-t  .sum-val { color: var(--blue); }
 .sum-row.navy-t  { background: #EEF1F6; }
 .sum-row.navy-t  .sum-val { color: var(--navy); }
- 
+
 /* ── MODAL ── */
 .overlay { position: fixed; inset: 0; background: rgba(10,20,40,.5); backdrop-filter: blur(4px); z-index: 100; display: none; align-items: center; justify-content: center; }
 .overlay.open { display: flex; }
@@ -510,22 +514,22 @@ tbody tr:hover td { background: #F8F7F4; }
 .f input:focus { border-color: var(--navy); background: #fff; box-shadow: 0 0 0 3px rgba(26,46,74,.07); }
 .f2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
- 
+
 /* ── TOAST ── */
 .toast { position: fixed; bottom: 24px; right: 24px; z-index: 200; background: var(--navy); color: #fff; padding: 11px 18px; border-radius: 8px; font-size: 12px; font-weight: 500; transform: translateY(60px); opacity: 0; transition: .28s ease; pointer-events: none; box-shadow: var(--shadow-md); }
 .toast.show { transform: translateY(0); opacity: 1; }
- 
+
 /* ── FOOTER ── */
 .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 .footer-txt { font-size: 11px; color: var(--muted); }
- 
+
 @media(max-width:1000px) { .chart-row { grid-template-columns: 1fr; } }
 @media(max-width:800px) { .kpi-row { grid-template-columns: repeat(3,1fr); } .mapper-grid { grid-template-columns: 1fr 1fr; } }
 @media(max-width:580px) { .kpi-row { grid-template-columns: 1fr 1fr; } .page { padding: 16px; } .topbar { padding: 0 16px; } }
 </style>
 </head>
 <body>
- 
+
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="topbar-brand">
@@ -541,9 +545,9 @@ tbody tr:hover td { background: #F8F7F4; }
     <button class="topbar-btn primary" onclick="openAddModal()">+ เพิ่ม Session</button>
   </div>
 </div>
- 
+
 <div class="page">
- 
+
   <!-- DATE STRIP -->
   <div style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--navy);border-radius:10px;padding:13px 20px;margin-bottom:24px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:12px;">
     <div style="display:flex;align-items:center;gap:12px;">
@@ -558,7 +562,7 @@ tbody tr:hover td { background: #F8F7F4; }
       <div style="font-size:13px;font-weight:600;color:var(--green);margin-top:2px" id="upStatus">20 มีนาคม 2569</div>
     </div>
   </div>
- 
+
   <!-- KPI -->
   <div class="section-hd"><h2>ภาพรวมการลงทะเบียน</h2><div class="section-hd-line"></div></div>
   <div class="kpi-row">
@@ -593,7 +597,7 @@ tbody tr:hover td { background: #F8F7F4; }
       <div class="kpi-trend">Session ที่ต้องเร่งประชาสัมพันธ์</div>
     </div>
   </div>
- 
+
   <!-- TOOLBAR -->
   <div class="toolbar">
     <div class="toolbar-left">
@@ -617,7 +621,7 @@ tbody tr:hover td { background: #F8F7F4; }
       <option value="remaining_desc">ที่นั่งคงเหลือ มาก → น้อย</option>
     </select>
   </div>
- 
+
   <!-- TABLE -->
   <div class="card">
     <div class="card-hd">
@@ -644,7 +648,7 @@ tbody tr:hover td { background: #F8F7F4; }
       </div>
     </div>
   </div>
- 
+
   <!-- CHARTS -->
   <div class="section-hd"><h2>การวิเคราะห์</h2><div class="section-hd-line"></div></div>
   <div class="chart-row">
@@ -667,13 +671,13 @@ tbody tr:hover td { background: #F8F7F4; }
       </div>
     </div>
   </div>
- 
+
   <div class="footer">
     <span class="footer-txt">NAC2026 · สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.)</span>
     <span class="footer-txt" id="footerUpdated">อัปเดต: 20 มีนาคม 2569</span>
   </div>
 </div>
- 
+
 <!-- MODAL -->
 <div class="overlay" id="overlay">
   <div class="modal">
@@ -690,14 +694,14 @@ tbody tr:hover td { background: #F8F7F4; }
   </div>
 </div>
 <div class="toast" id="toast"></div>
- 
+
 <script>
 // ── PALETTE ──────────────────────────────────────────────
 const BAR_COLORS=['#1A2E4A','#B5622A','#1A4A8A','#1E6B4A','#7A4A8A','#2A6A8A','#8A4A2A','#4A6A1A','#8A2A4A','#2A4A6A',
   '#6A4A1A','#1A6A4A','#4A1A6A','#8A6A2A','#2A8A6A','#6A2A4A','#4A8A2A','#2A4A8A','#8A4A6A','#4A2A8A'];
- 
+
 let sessions=[], nextId=1, editId=null, currentTab='all', rawRows=[], rawHdrs=[];
- 
+
 // ── INITIAL DATA ──────────────────────────────────────────
 const RAW=[
   [1,'การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร',90,36],
@@ -748,10 +752,10 @@ const RAW=[
   [46,'ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน',50,0],
 ];
 RAW.forEach(r=>sessions.push({id:nextId++,no:r[0],title:r[1],capacity:r[2],registered:r[3],isOnline:String(r[1]).startsWith('[Online]'),isUnlimited:r[2]==='ไม่จำกัด'}));
- 
+
 // ── SAVED MAPPING (จำการตั้งค่าคอลัมน์ไว้ในหน่วยความจำ) ──
 let savedMapping = null; // { ti, ri, ci } — จำ index คอลัมน์จากครั้งล่าสุด
- 
+
 function tryAutoApply(fname) {
   if (!savedMapping) return false;
   const { ti, ri, ci } = savedMapping;
@@ -765,19 +769,19 @@ function tryAutoApply(fname) {
   }
   return false;
 }
- 
+
 // ── FILE ──────────────────────────────────────────────────
 function handleFile(e){const f=e.target.files[0];if(!f)return;const ext=f.name.split('.').pop().toLowerCase();if(ext==='csv')readCSV(f);else readExcel(f);}
 function readCSV(f){const r=new FileReader();r.onload=ev=>{const ln=ev.target.result.split('\n').filter(l=>l.trim());rawHdrs=ln[0].split(',').map(h=>h.trim().replace(/^"|"$/g,''));rawRows=ln.slice(1).map(l=>l.split(',').map(c=>c.trim().replace(/^"|"$/g,'')));afterRead(f.name);};r.readAsText(f,'UTF-8');}
 function readExcel(f){const r=new FileReader();r.onload=ev=>{const wb=XLSX.read(ev.target.result,{type:'binary'});const ws=wb.Sheets[wb.SheetNames[0]];const arr=XLSX.utils.sheet_to_json(ws,{header:1,defval:''});rawHdrs=arr[0].map(h=>String(h).trim());rawRows=arr.slice(1).filter(r=>r.some(c=>c!==''));afterRead(f.name);};r.readAsBinaryString(f);}
- 
+
 function afterRead(fname) {
   // ถ้าเคยตั้งค่าไว้แล้วและชื่อคอลัมน์ตรงกัน → โหลดอัตโนมัติเลย
   if (tryAutoApply(fname)) return;
   // ถ้าไม่ตรง → เปิด Mapper ให้ตั้งค่าใหม่
   showMapper(fname);
 }
- 
+
 function showMapper(fname){
   const p=document.getElementById('mapperPanel');p.classList.add('show');
   ['mTitle','mDate','mReg','mCap'].forEach(id=>{const s=document.getElementById(id);s.innerHTML='<option value="">— ไม่มี —</option>';rawHdrs.forEach((h,i)=>s.innerHTML+=`<option value="${i}">${h}</option>`);});
@@ -792,9 +796,9 @@ function showMapper(fname){
   document.getElementById('prevBox').innerHTML=`${savedNote}ตัวอย่าง (${rawRows.length} แถว):\n${prev}`;
   showToast(`📂 โหลดไฟล์ "${fname}" — กรุณาตั้งค่าคอลัมน์`);
 }
- 
+
 function autoD(id,kws){const s=document.getElementById(id);rawHdrs.forEach((h,i)=>{if(kws.some(k=>h.toLowerCase().includes(k.toLowerCase())))s.value=String(i);});}
- 
+
 function applyMap(){
   const ti=document.getElementById('mTitle').value,ri=document.getElementById('mReg').value,ci=document.getElementById('mCap').value;
   if(ti===''||ri===''||ci===''){showToast('⚠ กรุณาเลือกคอลัมน์ที่จำเป็น');return;}
@@ -805,7 +809,7 @@ function applyMap(){
   showToast(`✅ โหลดข้อมูลแล้ว ${sessions.length} session — จำการตั้งค่าไว้แล้ว`);
   updateMappingBadge();
 }
- 
+
 function applyMapWithIndex(ti, ri, ci) {
   sessions=[];nextId=1;
   rawRows.forEach((row,idx)=>{
@@ -817,7 +821,7 @@ function applyMapWithIndex(ti, ri, ci) {
   });
   setUpdated();render();
 }
- 
+
 function updateMappingBadge() {
   const el = document.getElementById('mappingStatus');
   if (!el) return;
@@ -829,15 +833,15 @@ function updateMappingBadge() {
     el.style.color = 'var(--muted)';
   }
 }
- 
+
 function resetMapping() {
   savedMapping = null;
   updateMappingBadge();
   showToast('🔄 รีเซ็ตการตั้งค่าคอลัมน์แล้ว — อัปโหลดไฟล์ใหม่เพื่อตั้งค่าใหม่');
 }
- 
+
 function cancelMap(){document.getElementById('mapperPanel').classList.remove('show');}
- 
+
 // ── INLINE EDIT ───────────────────────────────────────────
 function inlineEdit(id,field,el){
   const inp=document.createElement('input');inp.className='edit-inp';inp.value=parseInt(el.textContent)||0;
@@ -845,7 +849,7 @@ function inlineEdit(id,field,el){
   inp.onkeydown=e=>{if(e.key==='Enter')inp.blur();if(e.key==='Escape'){render();}};
   el.replaceWith(inp);inp.focus();inp.select();
 }
- 
+
 // ── FILTER / SORT ─────────────────────────────────────────
 function setTab(tab,el){currentTab=tab;document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');renderTable();}
 let sortField='no',sortAsc=true;
@@ -869,7 +873,7 @@ function getFiltered(){
   else list.sort((a,b)=>a.no-b.no);
   return list;
 }
- 
+
 // ── RENDER ────────────────────────────────────────────────
 function render(){
   const onsite=sessions.filter(s=>!s.isUnlimited);
@@ -884,7 +888,7 @@ function render(){
   document.getElementById('kZ').textContent=zero;
   renderTable();renderCharts();
 }
- 
+
 function getStatusBadge(s){
   if(s.isUnlimited) return '<span class="status-badge status-online">ออนไลน์</span>';
   const pct=s.capacity>0?s.registered/s.capacity*100:0;
@@ -893,7 +897,7 @@ function getStatusBadge(s){
   if(pct>=50)            return `<span class="status-badge status-mid">ปานกลาง</span>`;
   return                        `<span class="status-badge status-low">มีที่ว่าง</span>`;
 }
- 
+
 function renderTable(){
   const list=getFiltered();
   document.getElementById('rowCount').textContent=`${list.length} รายการ`;
@@ -904,17 +908,17 @@ function renderTable(){
     const pct=isUnlim?null:(s.capacity>0?s.registered/s.capacity*100:0);
     const pctRound=pct!==null?Math.round(pct):null;
     const remaining=isUnlim?null:(s.capacity-s.registered);
- 
+
     // Progress bar & text color by %
     let progColor, progBg;
     if(pct===null)       { progColor='#1A4A8A'; progBg='#EAF0FA'; }
     else if(pct>=90)     { progColor='#B52A2A'; progBg='#FAEAEA'; }
     else if(pct>=50)     { progColor='#8A5A00'; progBg='#FDF3DC'; }
     else                 { progColor='#1E6B4A'; progBg='#EAF4EE'; }
- 
+
     const shortT=s.title.length>60?s.title.substring(0,60)+'…':s.title;
     const onlineMark=s.isOnline?`<span class="online-badge">ONLINE</span>`:'';
- 
+
     // Registered / capacity (%)
     const regCell=isUnlim
       ? `<span class="prog-txt" style="color:var(--navy);font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;cursor:pointer" onclick="inlineEdit(${s.id},'reg',this)" title="คลิกเพื่อแก้ไข">${s.registered}</span><span style="color:var(--muted);font-size:11px"> คน</span>`
@@ -922,13 +926,13 @@ function renderTable(){
          <span style="color:var(--muted);font-size:11px"> / </span>
          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);cursor:pointer" onclick="inlineEdit(${s.id},'cap',this)">${s.capacity}</span>
          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:${progColor};background:${progBg};padding:1px 6px;border-radius:4px;margin-left:4px">${pctRound}%</span>`;
- 
+
     // Remaining seats
     const remainCell=isUnlim
       ? `<span class="unlimited-chip">ไม่จำกัด</span>`
       : `<span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:${remaining===0?'#B52A2A':remaining<=10?'#8A5A00':'#1E6B4A'}">${remaining}</span>
          <span style="font-size:11px;color:var(--muted)"> ที่นั่ง</span>`;
- 
+
     // Progress bar
     const progCell=isUnlim
       ? `<span class="unlimited-chip">ไม่จำกัด</span>`
@@ -938,7 +942,7 @@ function renderTable(){
           </div>
           <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:${progColor};font-weight:600">${pctRound}%</span>
         </div>`;
- 
+
     return `<tr>
       <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">${String(s.no).padStart(2,'0')}</td>
       <td class="tc" title="${s.title}">${shortT}${onlineMark}</td>
@@ -953,7 +957,7 @@ function renderTable(){
     </tr>`;
   }).join('');
 }
- 
+
 function renderCharts(){
   // Bar
   const top20=[...sessions].filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -969,7 +973,7 @@ function renderCharts(){
       <div class="bar-lbl">${lbl}</div>
     </div>`;
   });
- 
+
   // Summary
   const totalReg=sessions.reduce((a,b)=>a+b.registered,0);
   const onsite=sessions.filter(s=>!s.isUnlimited);
@@ -986,7 +990,7 @@ function renderCharts(){
     <div class="sum-row red-t"><span class="sum-label">ยังไม่มีผู้สมัคร</span><span class="sum-val">${zero} session</span></div>
     <div class="sum-row navy-t"><span class="sum-label">Online Session</span><span class="sum-val">${onlineCount} session</span></div>`;
 }
- 
+
 // ── EXPORT ────────────────────────────────────────────────
 function exportCSV(){
   if(!sessions.length){showToast('ไม่มีข้อมูล');return;}
@@ -998,7 +1002,7 @@ function exportCSV(){
   a.download=`NAC2026_Report_${new Date().toISOString().slice(0,10)}.csv`;
   a.click();showToast('Export CSV เรียบร้อย');
 }
- 
+
 // ── MODAL ─────────────────────────────────────────────────
 function openAddModal(){editId=null;document.getElementById('mTitle2').textContent='เพิ่ม Session ใหม่';['fT','fC'].forEach(id=>document.getElementById(id).value='');document.getElementById('fR').value='0';document.getElementById('overlay').classList.add('open');}
 function openEditModal(id){
@@ -1022,14 +1026,14 @@ function saveSession(){
   closeModal();setUpdated();render();
 }
 function delSession(id){if(!confirm('ยืนยันการลบ Session นี้?'))return;sessions=sessions.filter(s=>s.id!==id);showToast('ลบ Session แล้ว');render();}
- 
+
 // ── HELPERS ───────────────────────────────────────────────
 function setUpdated(){const now=new Date();const t=`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} ${now.toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})}`;document.getElementById('upStatus').textContent=`อัปเดต ${t}`;document.getElementById('footerUpdated').textContent=`อัปเดต: ${t}`;}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);}
- 
+
 document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
- 
+
 render();
 </script>
 </body>
