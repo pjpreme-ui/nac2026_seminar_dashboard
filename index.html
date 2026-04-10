@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAC2026 Executive Dashboard — 3 Apr 2026</title>
-<meta property="og:title" content="NAC2026 Executive Dashboard — 3 Apr 2026">
-<meta property="og:description" content="NAC2026 · สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.) อัปเดต: 3 เมษายน 2569">
+<title>NAC2026 Executive Dashboard — 10 Apr 2026</title>
+<meta property="og:title" content="NAC2026 Executive Dashboard — 10 Apr 2026">
+<meta property="og:description" content="NAC2026 · สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.) อัปเดต: 10 เมษายน 2569">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pjpreme-ui.github.io/nac2026_seminar_dashboard/">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -540,7 +540,7 @@ tbody tr:hover td { background: #F8F7F4; }
     </div>
   </div>
   <div class="topbar-right">
-    <span class="topbar-date" id="topDate">3 เมษายน 2569</span>
+    <span class="topbar-date" id="topDate">10 เมษายน 2569</span>
     <button class="topbar-btn" onclick="exportCSV()">↓ Export CSV</button>
     <button class="topbar-btn primary" onclick="openAddModal()">+ เพิ่ม Session</button>
   </div>
@@ -559,30 +559,31 @@ tbody tr:hover td { background: #F8F7F4; }
     </div>
     <div style="text-align:right;flex-shrink:0">
       <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;font-weight:600">อัปเดตล่าสุด</div>
-      <div style="font-size:13px;font-weight:600;color:var(--green);margin-top:2px" id="upStatus">3 เมษายน 2569</div>
+      <div style="font-size:13px;font-weight:600;color:var(--green);margin-top:2px" id="upStatus">10 เมษายน 2569</div>
     </div>
   </div>
-
   <!-- KPI -->
   <div class="section-hd"><h2>ภาพรวมการลงทะเบียน</h2><div class="section-hd-line"></div></div>
-  <div class="kpi-row">
+  <!-- KPI Onsite -->
+  <div style="font-size:10px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding:6px 14px;background:var(--blue-bg);border-radius:6px;display:inline-block;border:1px solid #C5D8F0">📍 Onsite</div>
+  <div class="kpi-row" style="margin-bottom:20px">
     <div class="kpi navy">
-      <div class="kpi-lbl">Session ทั้งหมด</div>
-      <div class="kpi-val" id="kT">47</div>
+      <div class="kpi-lbl">Session Onsite</div>
+      <div class="kpi-val" id="kT">—</div>
       <div class="kpi-divider"></div>
-      <div class="kpi-trend">กิจกรรมย่อย NAC2026</div>
+      <div class="kpi-trend">รวม Hybrid</div>
     </div>
     <div class="kpi copper">
       <div class="kpi-lbl">ลงทะเบียนรวม</div>
       <div class="kpi-val" id="kR">—</div>
       <div class="kpi-divider"></div>
-      <div class="kpi-trend">จากทุก Session</div>
+      <div class="kpi-trend">Onsite ทั้งหมด</div>
     </div>
     <div class="kpi blue">
-      <div class="kpi-lbl">ที่นั่งรวม (Onsite)</div>
+      <div class="kpi-lbl">ที่นั่งรวม</div>
       <div class="kpi-val" id="kC">—</div>
       <div class="kpi-divider"></div>
-      <div class="kpi-trend">ไม่นับ Online</div>
+      <div class="kpi-trend">ความจุ Onsite</div>
     </div>
     <div class="kpi green">
       <div class="kpi-lbl">Occupancy Rate</div>
@@ -594,11 +595,39 @@ tbody tr:hover td { background: #F8F7F4; }
       <div class="kpi-lbl">ยังไม่มีผู้สมัคร</div>
       <div class="kpi-val" id="kZ">—</div>
       <div class="kpi-divider"></div>
-      <div class="kpi-trend">Session ที่ต้องเร่งประชาสัมพันธ์</div>
+      <div class="kpi-trend">ต้องเร่งประชาสัมพันธ์</div>
     </div>
   </div>
-
+  <!-- KPI Online -->
+  <div style="font-size:10px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding:6px 14px;background:var(--blue-bg);border-radius:6px;display:inline-block;border:1px solid #C5D8F0">🌐 Online</div>
+  <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:28px">
+    <div class="kpi blue">
+      <div class="kpi-lbl">Session Online</div>
+      <div class="kpi-val" id="kOLT">—</div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-trend">รวม Hybrid Online</div>
+    </div>
+    <div class="kpi copper">
+      <div class="kpi-lbl">ลงทะเบียนรวม</div>
+      <div class="kpi-val" id="kOLR">—</div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-trend">Online ทั้งหมด</div>
+    </div>
+    <div class="kpi navy">
+      <div class="kpi-lbl">ไม่จำกัดที่นั่ง</div>
+      <div class="kpi-val" id="kOLU">—</div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-trend">Session</div>
+    </div>
+    <div class="kpi red">
+      <div class="kpi-lbl">ยังไม่มีผู้สมัคร</div>
+      <div class="kpi-val" id="kOLZ">—</div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-trend">ต้องเร่งประชาสัมพันธ์</div>
+    </div>
+  </div>
   <!-- TOOLBAR -->
+  <div class="section-hd"><h2>รายการ Session</h2><div class="section-hd-line"></div></div>
   <div class="toolbar">
     <div class="toolbar-left">
       <div class="tabs">
@@ -610,15 +639,22 @@ tbody tr:hover td { background: #F8F7F4; }
       <div class="search-wrap">
         <input type="text" id="searchBox" placeholder="ค้นหา Session..." oninput="renderTable()">
       </div>
+      <select class="filter-sel" id="statusFilter" onchange="renderTable()">
+        <option value="all">ทุกสถานะ</option>
+        <option value="critical">ใกล้เต็ม (≥90%)</option>
+        <option value="mid">ปานกลาง (50–89%)</option>
+        <option value="low">มีที่ว่าง (&lt;50%)</option>
+        <option value="none">ยังว่าง (0 คน)</option>
+      </select>
     </div>
     <select class="filter-sel" id="sortSel" onchange="renderTable()">
-      <option value="no">เรียงตาม No.</option>
-      <option value="reg_desc">ลงทะเบียน มาก → น้อย</option>
+      <option value="reg_desc" selected>ลงทะเบียน มาก → น้อย</option>
       <option value="reg_asc">ลงทะเบียน น้อย → มาก</option>
       <option value="pct_desc">% เต็ม มาก → น้อย</option>
-      <option value="pct_asc">% เต็ม น้อย → มาก (ต้องโปรโมท)</option>
+      <option value="pct_asc">% เต็ม น้อย → มาก</option>
       <option value="remaining_asc">ที่นั่งคงเหลือ น้อย → มาก</option>
       <option value="remaining_desc">ที่นั่งคงเหลือ มาก → น้อย</option>
+      <option value="no">เรียงตาม No.</option>
     </select>
   </div>
 
@@ -650,11 +686,25 @@ tbody tr:hover td { background: #F8F7F4; }
   </div>
 
 
+
+  <!-- DAILY TREND -->
+  <div class="section-hd"><h2>แนวโน้มการลงทะเบียนรายวัน</h2><div class="section-hd-line"></div></div>
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-hd">
+      <span class="card-hd-title">จำนวนผู้ลงทะเบียนใหม่รายวัน (9 มี.ค. – 10 เม.ย. 2569)</span>
+      <div class="card-hd-right">
+        <span style="font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace" id="dailyTotal">—</span>
+      </div>
+    </div>
+    <div class="card-body" style="padding:20px">
+      <div id="dailyChart" style="display:flex;align-items:flex-end;gap:5px;height:140px;overflow-x:auto;padding-bottom:4px"></div>
+    </div>
+  </div>
   <!-- COMPARE CHART -->
   <div class="section-hd"><h2>เปรียบเทียบการลงทะเบียน</h2><div class="section-hd-line"></div></div>
   <div class="card" style="margin-bottom:20px">
     <div class="card-hd">
-      <span class="card-hd-title">27 มีนาคม vs 3 เมษายน 2569 (Onsite Top 20)</span>
+      <span class="card-hd-title">3 เมษายน vs 10 เมษายน 2569 (Onsite Top 20)</span>
       <div class="card-hd-right">
         <span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--muted)">
           <span style="width:10px;height:10px;background:#C8D8EC;border-radius:2px;display:inline-block"></span>3 เม.ย.
@@ -681,7 +731,7 @@ tbody tr:hover td { background: #F8F7F4; }
     <div class="chart-card">
       <div class="chart-hd">
         <div class="chart-hd-title">สรุปผู้บริหาร</div>
-        <div class="chart-hd-sub">ตัวชี้วัดสำคัญ ณ วันที่รายงาน</div>
+        <div class="chart-hd-sub">แยก Onsite / Online</div>
       </div>
       <div class="chart-body">
         <div class="sum-list" id="sumList"></div>
@@ -691,7 +741,7 @@ tbody tr:hover td { background: #F8F7F4; }
 
   <div class="footer">
     <span class="footer-txt">NAC2026 · สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.)</span>
-    <span class="footer-txt" id="footerUpdated">อัปเดต: 3 เมษายน 2569</span>
+    <span class="footer-txt" id="footerUpdated">อัปเดต: 10 เมษายน 2569</span>
   </div>
 </div>
 
@@ -721,54 +771,98 @@ let sessions=[], nextId=1, editId=null, currentTab='all', rawRows=[], rawHdrs=[]
 
 // ── INITIAL DATA ──────────────────────────────────────────
 const RAW=[
-  [1,'ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน',376,61],
-  [2,'การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร',90,65],
-  [3,'[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร','ไม่จำกัด',56],
-  [4,'Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน',90,31],
-  [5,'ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน',50,6],
-  [6,'ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง',50,17],
-  [7,'[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง','ไม่จำกัด',27],
-  [8,'[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management','ไม่จำกัด',19],
-  [9,'Net Zero: Beyond the Environment Shaping Lives and Economies',376,37],
-  [10,'การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change',90,28],
-  [11,'[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change','ไม่จำกัด',31],
-  [12,'FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม',50,35],
-  [13,'วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง',50,38],
-  [14,'Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน',90,37],
-  [15,'ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม',90,20],
-  [16,'ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน',100,17],
-  [17,'Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย',30,17],
-  [18,'โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ',150,28],
-  [19,'ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน',90,69],
-  [20,'การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน',100,16],
-  [21,'Green Steel: Sustainable Engineering Material for the Next Move',90,29],
-  [22,'บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน',90,15],
-  [23,'The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability',90,6],
-  [24,'[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability','ไม่จำกัด',27],
-  [25,'ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล',150,43],
-  [26,'เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ',150,48],
-  [27,'Circular Economy as a Business Opportunity drives Economic Growth',376,47],
-  [28,'Climate Justice & Greenwashing: From Lab to Law',376,45],
-  [29,'เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ',400,78],
-  [30,'CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero',90,37],
-  [31,'ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน',90,33],
-  [32,'การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน',50,35],
-  [33,'เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน',90,26],
-  [34,'จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ',90,48],
-  [35,'CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน',90,33],
-  [36,'[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน','ไม่จำกัด',30],
-  [37,'วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน',50,16],
-  [38,'Safety Standard and interlaboratory on Nanotechnology for sustainable economy',50,3],
-  [39,'[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy','ไม่จำกัด',16],
-  [40,'The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์',90,43],
-  [41,'ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน',90,19],
-  [42,'บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG',100,12],
-  [43,'เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน',150,10],
-  [44,'จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน',100,25],
-  [45,'เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร',90,42],
-  [46,'เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม',50,50],
+  [1,'A1 กลุ่มเกษตรและอาหาร Regen-Agri & Future Food Tech (นวัตกรรมเกษตรฟื้นฟูและอาหารแห่งอนาคต) วันที่ 1',500,54],
+  [2,'A1 กลุ่มเกษตรและอาหาร Regen-Agri & Future Food Tech (นวัตกรรมเกษตรฟื้นฟูและอาหารแห่งอนาคต) วันที่ 2',500,47],
+  [3,'A1 กลุ่มเกษตรและอาหาร Regen-Agri & Future Food Tech (นวัตกรรมเกษตรฟื้นฟูและอาหารแห่งอนาคต) วันที่ 3',500,31],
+  [4,'A1 กลุ่มเกษตรและอาหาร Regen-Agri & Future Food Tech (นวัตกรรมเกษตรฟื้นฟูและอาหารแห่งอนาคต) วันที่ 4',500,39],
+  [5,'A2 กลุ่มพลังงาน Decarbonized Energy & Storage Solution (พลังงานไร้คาร์บอนและโซลูชันการกักเก็บ) วันที่ 1',500,32],
+  [6,'A2 กลุ่มพลังงาน Decarbonized Energy & Storage Solution (พลังงานไร้คาร์บอนและโซลูชันการกักเก็บ) วันที่ 2',500,20],
+  [7,'A2 กลุ่มพลังงาน Decarbonized Energy & Storage Solution (พลังงานไร้คาร์บอนและโซลูชันการกักเก็บ) วันที่ 3',500,32],
+  [8,'A3 กลุ่มอุตสาหกรรม Low-Carbon Smart Manufacturing (อุตสาหกรรมอัจฉริยะคาร์บอนต่ำ) วันที่ 1',500,24],
+  [9,'A3 กลุ่มอุตสาหกรรม Low-Carbon Smart Manufacturing (อุตสาหกรรมอัจฉริยะคาร์บอนต่ำ) วันที่ 2',500,25],
+  [10,'A3 กลุ่มอุตสาหกรรม Low-Carbon Smart Manufacturing (อุตสาหกรรมอัจฉริยะคาร์บอนต่ำ) วันที่ 3',500,23],
+  [11,'A4 กลุ่ม NQI บริการ NQI เพื่อความยั่งยืนและ Net Zero วันที่ 1',500,3],
+  [12,'A4 กลุ่ม NQI บริการ NQI เพื่อความยั่งยืนและ Net Zero วันที่ 2',500,12],
+  [13,'A5 กลุ่มของเสีย Circular Economy & Waste-to-Resource (เศรษฐกิจหมุนเวียนและการเปลี่ยนขยะเป็นทรัพยากร) วันที่ 1',500,23],
+  [14,'A5 กลุ่มของเสีย Circular Economy & Waste-to-Resource (เศรษฐกิจหมุนเวียนและการเปลี่ยนขยะเป็นทรัพยากร) วันที่ 2',500,24],
+  [15,'Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย',50,32],
+  [16,'CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero',90,79],
+  [17,'CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน',90,45],
+  [18,'Circular Economy as a Business Opportunity drives Economic Growth',376,80],
+  [19,'Circular Economy Talk: The Material Transformation - Standardizing Recycled Plastics',90,0],
+  [20,'Climate Justice & Greenwashing: From Lab to Law',376,60],
+  [21,'FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม',50,50],
+  [22,'Green Steel: Sustainable Engineering Material for the Next Move',90,46],
+  [23,'[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน','ไม่จำกัด',45],
+  [24,'[Online] Circular Economy Talk: The Material Transformation','ไม่จำกัด',2],
+  [25,'[Online] Climate Justice & Greenwashing: From Lab to Law','ไม่จำกัด',0],
+  [26,'[Online] Emerging Micropollutants in the Environment','ไม่จำกัด',28],
+  [27,'[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy','ไม่จำกัด',23],
+  [28,'[Online] The Role of Wood and Bamboo as a Sustainable Construction Material','ไม่จำกัด',39],
+  [29,'[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4','ไม่จำกัด',73],
+  [30,'[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change','ไม่จำกัด',41],
+  [31,'[Online] เครื่องมือดิจิทัลสู่ Net Zero','ไม่จำกัด',0],
+  [32,'[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย','ไม่จำกัด',42],
+  [33,'[Online] บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน','ไม่จำกัด',9],
+  [34,'Regional research challenges and advancing nanotechnology development',39,0],
+  [35,'Safety Standard and interlaboratory on Nanotechnology for sustainable economy',50,22],
+  [36,'Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน',90,59],
+  [37,'Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน',90,63],
+  [38,'The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์',90,69],
+  [39,'The Role of Wood and Bamboo as a Sustainable Construction Material',90,14],
+  [40,'การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร',90,85],
+  [41,'การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change',90,39],
+  [42,'การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน',90,57],
+  [43,'การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน',100,33],
+  [44,'ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน',376,125],
+  [45,'ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน',90,86],
+  [46,'ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน',90,79],
+  [47,'เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ',325,131],
+  [48,'จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน',100,51],
+  [49,'จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ',90,72],
+  [50,'เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร',90,53],
+  [51,'ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม',90,47],
+  [52,'เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน',150,29],
+  [53,'ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน',90,42],
+  [54,'ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง',50,36],
+  [55,'เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ',400,112],
+  [56,'เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม',80,80],
+  [57,'เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน',90,43],
+  [58,'บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน',90,26],
+  [59,'บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG',100,48],
+  [60,'ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล',150,70],
+  [61,'เปลี่ยนวิถีชีวิตพลิกเกมเศรษฐกิจด้วย Net Zero',376,90],
+  [62,'ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน',100,28],
+  [63,'โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ',150,46],
+  [64,'ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน',50,13],
+  [65,'วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง',70,53],
+  [66,'วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน',50,29],
 ];
-RAW.forEach(r=>sessions.push({id:nextId++,no:r[0],title:r[1],capacity:r[2],registered:r[3],isOnline:String(r[1]).startsWith('[Online]'),isUnlimited:r[2]==='ไม่จำกัด'}));
+RAW.forEach(r=>sessions.push({id:nextId++,no:r[0],title:r[1],capacity:r[2],registered:r[3],isOnline:String(r[1]).startsWith('[Online]'),isUnlimited:r[2]==='ไม่จำกัด',isGroupA:/^A[1-5]\s/.test(String(r[1]))}));
+
+
+// ── DAILY TREND DATA ──────────────────────────────────────
+const DAILY_DATA = [["09/03", 24], ["10/03", 29], ["11/03", 19], ["12/03", 11], ["13/03", 10], ["14/03", 6], ["15/03", 1], ["16/03", 23], ["17/03", 39], ["18/03", 41], ["19/03", 36], ["20/03", 23], ["21/03", 5], ["22/03", 5], ["23/03", 24], ["24/03", 20], ["25/03", 60], ["26/03", 47], ["27/03", 68], ["28/03", 15], ["29/03", 9], ["30/03", 72], ["31/03", 64], ["01/04", 82], ["02/04", 90], ["03/04", 94], ["04/04", 19], ["05/04", 25], ["06/04", 58], ["07/04", 126], ["08/04", 161], ["09/04", 153], ["10/04", 43]];
+
+function renderDailyChart(){
+  const el = document.getElementById('dailyChart');
+  if(!el) return;
+  const maxVal = Math.max(...DAILY_DATA.map(d=>d[1]), 1);
+  const total = DAILY_DATA.reduce((a,b)=>a+b[1],0);
+  const totEl = document.getElementById('dailyTotal');
+  if(totEl) totEl.textContent = 'รวม ' + total.toLocaleString() + ' คน';
+  el.innerHTML = DAILY_DATA.map(([dt, cnt])=>{
+    const h = Math.round((cnt/maxVal)*120);
+    const isHigh = cnt >= 100;
+    const isMid = cnt >= 50;
+    const color = isHigh ? '#B5622A' : isMid ? '#1A2E4A' : '#6A8AB0';
+    return `<div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:32px;gap:3px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:600;color:${color}">${cnt}</div>
+      <div style="width:22px;background:${color};border-radius:2px 2px 0 0;height:${Math.max(h,2)}px;opacity:.85" title="${dt}: ${cnt} คน"></div>
+      <div style="font-size:7px;color:var(--muted);text-align:center">${dt}</div>
+    </div>`;
+  }).join('');
+}
 
 // ── SAVED MAPPING (จำการตั้งค่าคอลัมน์ไว้ในหน่วยความจำ) ──
 let savedMapping = null; // { ti, ri, ci } — จำ index คอลัมน์จากครั้งล่าสุด
@@ -838,7 +932,7 @@ function applyMapWithIndex(ti, ri, ci) {
   });
   setUpdated();
 // ── PREVIOUS WEEK DATA (20 Mar) ──────────────────────────
-const PREV_DATA = {"การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 49, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 40, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 32, "ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 29, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 28, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 28, "Circular Economy as a Business Opportunity drives Economic Growth": 26, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 26, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 25, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 22, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 22, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 22, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 21, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 21, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 21, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 20, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 19, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 17, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 17, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 17, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 15, "Green Steel: Sustainable Engineering Material for the Next Move": 15, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 15, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 15, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 15, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 15, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 14, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 13, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 13, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 12, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 11, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 10, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 10, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 9, "[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management": 8, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 8, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 8, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 8, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 7, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 7, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 6, "Climate Justice & Greenwashing: From Lab to Law": 5, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 3, "The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 2, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 2};
+const PREV_DATA = {"ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 61, "การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 65, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4": 56, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 31, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 6, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 17, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 27, "[Online] Emerging Micropollutants in the Environment": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 37, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 28, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 31, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 35, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 38, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 37, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 20, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 17, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 17, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 28, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 69, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 16, "Green Steel: Sustainable Engineering Material for the Next Move": 29, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 15, "The Role of Wood and Bamboo as a Sustainable Construction Material": 6, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material": 27, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 43, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 48, "Circular Economy as a Business Opportunity drives Economic Growth": 47, "Climate Justice & Greenwashing: From Lab to Law": 45, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 78, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 37, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 33, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 35, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 26, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 48, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 33, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 30, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 16, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 3, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 16, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 43, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 19, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 12, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 10, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 25, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 42, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 50};
 
 function renderCompareChart(){
   const onsite = sessions.filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -867,6 +961,7 @@ function renderCompareChart(){
 
 render();
 renderCompareChart();
+renderDailyChart();
 }
 
 function updateMappingBadge() {
@@ -894,7 +989,7 @@ function inlineEdit(id,field,el){
   const inp=document.createElement('input');inp.className='edit-inp';inp.value=parseInt(el.textContent)||0;
   inp.onblur=()=>{const s=sessions.find(x=>x.id===id);if(!s)return;const v=Math.max(0,parseInt(inp.value)||0);if(field==='reg')s.registered=s.isUnlimited?v:Math.min(v,s.capacity);else{s.capacity=Math.max(v,s.registered);s.isUnlimited=false;}setUpdated();
 // ── PREVIOUS WEEK DATA (20 Mar) ──────────────────────────
-const PREV_DATA = {"การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 49, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 40, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 32, "ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 29, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 28, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 28, "Circular Economy as a Business Opportunity drives Economic Growth": 26, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 26, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 25, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 22, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 22, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 22, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 21, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 21, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 21, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 20, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 19, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 17, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 17, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 17, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 15, "Green Steel: Sustainable Engineering Material for the Next Move": 15, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 15, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 15, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 15, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 15, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 14, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 13, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 13, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 12, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 11, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 10, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 10, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 9, "[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management": 8, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 8, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 8, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 8, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 7, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 7, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 6, "Climate Justice & Greenwashing: From Lab to Law": 5, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 3, "The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 2, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 2};
+const PREV_DATA = {"ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 61, "การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 65, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4": 56, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 31, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 6, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 17, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 27, "[Online] Emerging Micropollutants in the Environment": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 37, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 28, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 31, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 35, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 38, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 37, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 20, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 17, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 17, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 28, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 69, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 16, "Green Steel: Sustainable Engineering Material for the Next Move": 29, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 15, "The Role of Wood and Bamboo as a Sustainable Construction Material": 6, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material": 27, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 43, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 48, "Circular Economy as a Business Opportunity drives Economic Growth": 47, "Climate Justice & Greenwashing: From Lab to Law": 45, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 78, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 37, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 33, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 35, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 26, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 48, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 33, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 30, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 16, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 3, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 16, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 43, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 19, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 12, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 10, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 25, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 42, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 50};
 
 function renderCompareChart(){
   const onsite = sessions.filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -922,10 +1017,11 @@ function renderCompareChart(){
 }
 
 render();
-renderCompareChart();showToast('อัปเดตแล้ว');};
+renderCompareChart();
+renderDailyChart();showToast('อัปเดตแล้ว');};
   inp.onkeydown=e=>{if(e.key==='Enter')inp.blur();if(e.key==='Escape'){
 // ── PREVIOUS WEEK DATA (20 Mar) ──────────────────────────
-const PREV_DATA = {"การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 49, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 40, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 32, "ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 29, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 28, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 28, "Circular Economy as a Business Opportunity drives Economic Growth": 26, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 26, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 25, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 22, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 22, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 22, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 21, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 21, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 21, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 20, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 19, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 17, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 17, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 17, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 15, "Green Steel: Sustainable Engineering Material for the Next Move": 15, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 15, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 15, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 15, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 15, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 14, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 13, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 13, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 12, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 11, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 10, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 10, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 9, "[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management": 8, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 8, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 8, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 8, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 7, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 7, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 6, "Climate Justice & Greenwashing: From Lab to Law": 5, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 3, "The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 2, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 2};
+const PREV_DATA = {"ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 61, "การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 65, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4": 56, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 31, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 6, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 17, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 27, "[Online] Emerging Micropollutants in the Environment": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 37, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 28, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 31, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 35, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 38, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 37, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 20, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 17, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 17, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 28, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 69, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 16, "Green Steel: Sustainable Engineering Material for the Next Move": 29, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 15, "The Role of Wood and Bamboo as a Sustainable Construction Material": 6, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material": 27, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 43, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 48, "Circular Economy as a Business Opportunity drives Economic Growth": 47, "Climate Justice & Greenwashing: From Lab to Law": 45, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 78, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 37, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 33, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 35, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 26, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 48, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 33, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 30, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 16, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 3, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 16, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 43, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 19, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 12, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 10, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 25, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 42, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 50};
 
 function renderCompareChart(){
   const onsite = sessions.filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -953,7 +1049,8 @@ function renderCompareChart(){
 }
 
 render();
-renderCompareChart();}};
+renderCompareChart();
+renderDailyChart();}};
   el.replaceWith(inp);inp.focus();inp.select();
 }
 
@@ -964,37 +1061,59 @@ function sortBy(f){if(sortField===f)sortAsc=!sortAsc;else{sortField=f;sortAsc=tr
 function getFiltered(){
   const q=document.getElementById('searchBox').value.toLowerCase();
   const srt=document.getElementById('sortSel').value;
-  let list=[...sessions];
+  const statusF=document.getElementById('statusFilter').value;
+  let list=sessions.filter(s=>!s.isGroupA);
   if(currentTab==='onsite') list=list.filter(s=>!s.isOnline);
   if(currentTab==='online') list=list.filter(s=>s.isOnline);
   if(currentTab==='empty')  list=list.filter(s=>s.registered===0);
   if(q) list=list.filter(s=>s.title.toLowerCase().includes(q));
+  // Status filter
+  if(statusF!=='all') list=list.filter(s=>{
+    if(s.isUnlimited) return false;
+    const pct=s.capacity>0?s.registered/s.capacity*100:0;
+    if(statusF==='none')     return s.registered===0;
+    if(statusF==='critical') return pct>=90;
+    if(statusF==='mid')      return pct>=50&&pct<90;
+    if(statusF==='low')      return s.registered>0&&pct<50;
+    return true;
+  });
   const getPct=s=>s.isUnlimited?-1:s.capacity>0?s.registered/s.capacity*100:0;
   const getRemain=s=>s.isUnlimited?999999:(s.capacity-s.registered);
-  if(srt==='reg_desc')        list.sort((a,b)=>b.registered-a.registered);
-  else if(srt==='reg_asc')    list.sort((a,b)=>a.registered-b.registered);
+  if(srt==='reg_asc')         list.sort((a,b)=>a.registered-b.registered);
   else if(srt==='pct_desc')   list.sort((a,b)=>getPct(b)-getPct(a));
   else if(srt==='pct_asc')    list.sort((a,b)=>getPct(a)-getPct(b));
   else if(srt==='remaining_asc')  list.sort((a,b)=>getRemain(a)-getRemain(b));
   else if(srt==='remaining_desc') list.sort((a,b)=>getRemain(b)-getRemain(a));
-  else list.sort((a,b)=>a.no-b.no);
+  else if(srt==='no')         list.sort((a,b)=>a.no-b.no);
+  else list.sort((a,b)=>b.registered-a.registered); // default: reg_desc
   return list;
 }
 
 // ── RENDER ────────────────────────────────────────────────
 function render(){
-  const onsite=sessions.filter(s=>!s.isUnlimited);
-  const totalCap=onsite.reduce((a,b)=>a+(typeof b.capacity==='number'?b.capacity:0),0);
-  const totalReg=sessions.reduce((a,b)=>a+b.registered,0);
+  const mainS=sessions.filter(s=>!s.isGroupA);
+  // Onsite KPIs
+  const onsiteS=mainS.filter(s=>!s.isOnline);
+  const totalCap=onsiteS.reduce((a,b)=>a+(typeof b.capacity==='number'?b.capacity:0),0);
+  const totalReg=onsiteS.reduce((a,b)=>a+b.registered,0);
   const occ=totalCap>0?(totalReg/totalCap*100).toFixed(1):0;
-  const zero=sessions.filter(s=>s.registered===0).length;
-  document.getElementById('kT').textContent=sessions.length;
+  const zero=onsiteS.filter(s=>s.registered===0).length;
+  document.getElementById('kT').textContent=onsiteS.length;
   document.getElementById('kR').textContent=totalReg;
   document.getElementById('kC').textContent=totalCap.toLocaleString();
   document.getElementById('kO').textContent=occ+'%';
   document.getElementById('kZ').textContent=zero;
-  renderTable();renderCharts();renderCompareChart();
+  // Online KPIs
+  const onlineS=mainS.filter(s=>s.isOnline);
+  const olReg=onlineS.reduce((a,b)=>a+b.registered,0);
+  const olZero=onlineS.filter(s=>s.registered===0).length;
+  document.getElementById('kOLT').textContent=onlineS.length;
+  document.getElementById('kOLR').textContent=olReg;
+  document.getElementById('kOLU').textContent=onlineS.filter(s=>s.isUnlimited).length;
+  document.getElementById('kOLZ').textContent=olZero;
+  renderTable();renderCharts();renderCompareChart();renderDailyChart();
 }
+
 
 function getStatusBadge(s){
   if(s.isUnlimited) return '<span class="status-badge status-online">ออนไลน์</span>';
@@ -1010,7 +1129,8 @@ function renderTable(){
   document.getElementById('rowCount').textContent=`${list.length} รายการ`;
   const tb=document.getElementById('tBody');
   if(!list.length){tb.innerHTML=`<tr><td colspan="7" class="no-data">ไม่พบ Session ที่ตรงกัน</td></tr>`;return;}
-  tb.innerHTML=list.map(s=>{
+  tb.innerHTML=list.map((s,idx)=>{
+    const seqNo=idx+1;
     const isUnlim=s.isUnlimited;
     const pct=isUnlim?null:(s.capacity>0?s.registered/s.capacity*100:0);
     const pctRound=pct!==null?Math.round(pct):null;
@@ -1051,7 +1171,7 @@ function renderTable(){
         </div>`;
 
     return `<tr>
-      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">${String(s.no).padStart(2,'0')}</td>
+      <td style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted)">${String(seqNo).padStart(2,'0')}</td>
       <td class="tc" title="${s.title}">${shortT}${onlineMark}</td>
       <td>${regCell}</td>
       <td>${remainCell}</td>
@@ -1066,8 +1186,8 @@ function renderTable(){
 }
 
 function renderCharts(){
-  // Bar
-  const top20=[...sessions].filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
+  // Bar — seminar only
+  const top20=[...sessions].filter(s=>!s.isOnline&&!s.isGroupA).sort((a,b)=>b.registered-a.registered).slice(0,20);
   const barA=document.getElementById('barChart');
   barA.innerHTML='';
   const maxR=Math.max(...top20.map(s=>s.registered),1);
@@ -1081,21 +1201,33 @@ function renderCharts(){
     </div>`;
   });
 
-  // Summary
-  const totalReg=sessions.reduce((a,b)=>a+b.registered,0);
-  const onsite=sessions.filter(s=>!s.isUnlimited);
+  // Summary — Seminar
+  const mainS=sessions.filter(s=>!s.isGroupA);
+  const totalReg=mainS.reduce((a,b)=>a+b.registered,0);
+  const onsite=mainS.filter(s=>!s.isUnlimited);
   const totalCap=onsite.reduce((a,b)=>a+(typeof b.capacity==='number'?b.capacity:0),0);
-  const zero=sessions.filter(s=>s.registered===0).length;
-  const top=sessions.length?sessions.reduce((a,b)=>a.registered>b.registered?a:b):null;
+  const zero=mainS.filter(s=>s.registered===0).length;
+  const top=mainS.length?mainS.reduce((a,b)=>a.registered>b.registered?a:b):null;
   const occ=totalCap>0?(totalReg/totalCap*100).toFixed(1):0;
-  const onlineCount=sessions.filter(s=>s.isOnline).length;
+  const onlineCount=mainS.filter(s=>s.isOnline).length;
+  const onsiteS2=mainS.filter(s=>!s.isOnline);
+  const onlineS2=mainS.filter(s=>s.isOnline);
+  const oCap=onsiteS2.reduce((a,b)=>a+(typeof b.capacity==='number'?b.capacity:0),0);
+  const oReg=onsiteS2.reduce((a,b)=>a+b.registered,0);
+  const oOcc=oCap>0?(oReg/oCap*100).toFixed(1):0;
+  const topOnsite=onsiteS2.length?onsiteS2.reduce((a,b)=>a.registered>b.registered?a:b):null;
+  const topOnline=onlineS2.length?onlineS2.reduce((a,b)=>a.registered>b.registered?a:b):null;
+  const olReg2=onlineS2.reduce((a,b)=>a+b.registered,0);
   document.getElementById('sumList').innerHTML=`
-    <div class="sum-row navy-t"><span class="sum-label">Session ทั้งหมด</span><span class="sum-val">${sessions.length} session</span></div>
-    <div class="sum-row blue-t"><span class="sum-label">ที่นั่งว่าง (Onsite)</span><span class="sum-val">${(totalCap-totalReg).toLocaleString()} คน</span></div>
-    <div class="sum-row green-t"><span class="sum-label">Occupancy Rate</span><span class="sum-val">${occ}%</span></div>
-    <div class="sum-row amber-t"><span class="sum-label">Session ยอดนิยม</span><span class="sum-val">${top?top.registered+' คน':'—'}</span></div>
-    <div class="sum-row red-t"><span class="sum-label">ยังไม่มีผู้สมัคร</span><span class="sum-val">${zero} session</span></div>
-    <div class="sum-row navy-t"><span class="sum-label">Online Session</span><span class="sum-val">${onlineCount} session</span></div>`;
+    <div style="font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.8px;padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:4px">📍 Onsite</div>
+    <div class="sum-row navy-t"><span class="sum-label">Session Onsite</span><span class="sum-val">${onsiteS2.length} session</span></div>
+    <div class="sum-row blue-t"><span class="sum-label">ที่นั่งว่าง</span><span class="sum-val">${(oCap-oReg).toLocaleString()} คน</span></div>
+    <div class="sum-row green-t"><span class="sum-label">Occupancy Rate</span><span class="sum-val">${oOcc}%</span></div>
+    <div class="sum-row amber-t"><span class="sum-label">ยอดนิยม Onsite</span><span class="sum-val">${topOnsite?topOnsite.registered+' คน':'—'}</span></div>
+    <div style="font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.8px;padding:8px 0 4px;border-bottom:1px solid var(--border);margin-bottom:4px">🌐 Online</div>
+    <div class="sum-row blue-t"><span class="sum-label">Session Online</span><span class="sum-val">${onlineS2.length} session</span></div>
+    <div class="sum-row copper-t" style="background:var(--amber-bg)"><span class="sum-label">ลงทะเบียนรวม</span><span class="sum-val" style="color:var(--amber)">${olReg2} คน</span></div>
+    <div class="sum-row amber-t"><span class="sum-label">ยอดนิยม Online</span><span class="sum-val">${topOnline?topOnline.registered+' คน':'—'}</span></div>`;
 }
 
 // ── EXPORT ────────────────────────────────────────────────
@@ -1132,7 +1264,7 @@ function saveSession(){
   else{const no=sessions.length?Math.max(...sessions.map(s=>s.no))+1:1;sessions.push({id:nextId++,no,title,capacity:cap,registered:reg,isOnline:title.startsWith('[Online]'),isUnlimited});showToast('เพิ่ม Session แล้ว');}
   closeModal();setUpdated();
 // ── PREVIOUS WEEK DATA (20 Mar) ──────────────────────────
-const PREV_DATA = {"การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 49, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 40, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 32, "ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 29, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 28, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 28, "Circular Economy as a Business Opportunity drives Economic Growth": 26, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 26, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 25, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 22, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 22, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 22, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 21, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 21, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 21, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 20, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 19, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 17, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 17, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 17, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 15, "Green Steel: Sustainable Engineering Material for the Next Move": 15, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 15, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 15, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 15, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 15, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 14, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 13, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 13, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 12, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 11, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 10, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 10, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 9, "[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management": 8, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 8, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 8, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 8, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 7, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 7, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 6, "Climate Justice & Greenwashing: From Lab to Law": 5, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 3, "The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 2, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 2};
+const PREV_DATA = {"ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 61, "การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 65, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4": 56, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 31, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 6, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 17, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 27, "[Online] Emerging Micropollutants in the Environment": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 37, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 28, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 31, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 35, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 38, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 37, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 20, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 17, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 17, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 28, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 69, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 16, "Green Steel: Sustainable Engineering Material for the Next Move": 29, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 15, "The Role of Wood and Bamboo as a Sustainable Construction Material": 6, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material": 27, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 43, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 48, "Circular Economy as a Business Opportunity drives Economic Growth": 47, "Climate Justice & Greenwashing: From Lab to Law": 45, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 78, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 37, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 33, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 35, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 26, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 48, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 33, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 30, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 16, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 3, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 16, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 43, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 19, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 12, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 10, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 25, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 42, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 50};
 
 function renderCompareChart(){
   const onsite = sessions.filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -1161,10 +1293,11 @@ function renderCompareChart(){
 
 render();
 renderCompareChart();
+renderDailyChart();
 }
 function delSession(id){if(!confirm('ยืนยันการลบ Session นี้?'))return;sessions=sessions.filter(s=>s.id!==id);showToast('ลบ Session แล้ว');
 // ── PREVIOUS WEEK DATA (20 Mar) ──────────────────────────
-const PREV_DATA = {"การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 49, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 40, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 32, "ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 29, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 28, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 28, "Circular Economy as a Business Opportunity drives Economic Growth": 26, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 26, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 25, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 22, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 22, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 22, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 21, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 21, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 21, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 20, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 19, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 17, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 17, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 17, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 15, "Green Steel: Sustainable Engineering Material for the Next Move": 15, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 15, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 15, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 15, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 15, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 14, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 13, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 13, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 12, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 11, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 10, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 10, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 9, "[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management": 8, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 8, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 8, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 8, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 7, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 7, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 6, "Climate Justice & Greenwashing: From Lab to Law": 5, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 3, "The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 2, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 2};
+const PREV_DATA = {"ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 61, "การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 65, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4": 56, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 31, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 6, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 17, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 27, "[Online] Emerging Micropollutants in the Environment": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 37, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 28, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 31, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 35, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 38, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 37, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 20, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 17, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 17, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 28, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 69, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 16, "Green Steel: Sustainable Engineering Material for the Next Move": 29, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 15, "The Role of Wood and Bamboo as a Sustainable Construction Material": 6, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material": 27, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 43, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 48, "Circular Economy as a Business Opportunity drives Economic Growth": 47, "Climate Justice & Greenwashing: From Lab to Law": 45, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 78, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 37, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 33, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 35, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 26, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 48, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 33, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 30, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 16, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 3, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 16, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 43, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 19, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 12, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 10, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 25, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 42, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 50};
 
 function renderCompareChart(){
   const onsite = sessions.filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -1192,7 +1325,8 @@ function renderCompareChart(){
 }
 
 render();
-renderCompareChart();}
+renderCompareChart();
+renderDailyChart();}
 
 // ── HELPERS ───────────────────────────────────────────────
 function setUpdated(){const now=new Date();const t=`${now.getDate()}/${now.getMonth()+1}/${now.getFullYear()} ${now.toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})}`;document.getElementById('upStatus').textContent=`อัปเดต ${t}`;document.getElementById('footerUpdated').textContent=`อัปเดต: ${t}`;}
@@ -1203,7 +1337,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
 
 // ── PREVIOUS WEEK DATA (20 Mar) ──────────────────────────
-const PREV_DATA = {"การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 49, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 40, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 32, "ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 29, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 28, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 28, "Circular Economy as a Business Opportunity drives Economic Growth": 26, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 26, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 25, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 22, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 22, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 22, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 21, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 21, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 21, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 20, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 19, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 17, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 17, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 17, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 15, "Green Steel: Sustainable Engineering Material for the Next Move": 15, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 15, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 15, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 15, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 15, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 14, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 13, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 13, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 12, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 11, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 10, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 10, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 9, "[Online] Emerging Micropollutants in the Environment: Landscape, Technologies, and Integrated Solutions for Sustainable Management": 8, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 8, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 8, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 8, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 7, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 7, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 6, "Climate Justice & Greenwashing: From Lab to Law": 5, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 3, "The Role of Wood and Bamboo as a Sustainable Construction Material: Supporting Global Sustainability": 2, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 2};
+const PREV_DATA = {"ขับเคลื่อนประเทศไทยสู่เศรษฐกิจคาร์บอนต่ำ: นโยบาย การเงิน และนวัตกรรมเพื่อการเปลี่ยนผ่านอย่างยั่งยืน": 61, "การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4: ห่วงโซ่คุณค่าของไบโอชาร์สำหรับการเกษตร": 65, "[Online] การประชุมระดมสมอง Biochar Consortium ครั้งที่ 4": 56, "Sustainable Aviation Fuel (SAF) Transition: พลังขับเคลื่อนการเปลี่ยนผ่านสู่อุตสาหกรรมการบินยั่งยืน": 31, "ลดคาร์บอนด้วยสติ: นวัตกรรม DSM กับการขับเคลื่อนกองยานพาหนะอย่างยั่งยืน": 6, "ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 17, "[Online] ถอดรหัสวิกฤตไมโครพลาสติกไทย: ตรวจวัดให้ชัด จัดการให้จริง": 27, "[Online] Emerging Micropollutants in the Environment": 19, "Net Zero: Beyond the Environment Shaping Lives and Economies": 37, "การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 28, "[Online] การปรับตัวของเกษตรกรในการปลูกข้าวในสภาวะ Climate change": 31, "FlavorSERP: แพลตฟอร์มนวัตกรรมการวิจัยและพัฒนากลิ่นรสเพื่อสร้างมูลค่าให้อุตสาหกรรม": 35, "วัสดุนาโนที่เป็นมิตรต่อสิ่งแวดล้อม: นวัตกรรมจากของเสียสู่คุณค่าในเวชสำอาง": 38, "Sustainable biomass nexus: ร่วมสร้างคุณค่าจากชีวมวลอย่างยั่งยืน": 37, "ชี้เป้าฝุ่นแม่นยำ – ติดตามแก้ไข PM2.5 ตรงจุด: ยกระดับเทคโนโลยี e-Nose สู่เครือข่ายภาคสนาม": 20, "ไผ่: เมล็ดพันธุ์แห่งการพัฒนา Nature Positive และเศรษฐกิจชุมชน": 17, "Beyond the Box: The Future of Packaging Labels - พลิกดีไซน์ฉลากไทย": 17, "โรงเรือนอัจฉริยะและโรงงานผลิตพืช ในโลกที่ถูกจำกัดด้วยสภาพภูมิอากาศ": 28, "ข้าวคาร์บอนต่ำและพันธุ์ข้าวรักษ์โลกสู่อนาคตยั่งยืน": 69, "การยกระดับระบบประปาหมู่บ้านตามเป้าหมาย SDG 6: เทคโนโลยีบำบัดน้ำเพื่อความยั่งยืน": 16, "Green Steel: Sustainable Engineering Material for the Next Move": 29, "บทบาทธนาคารอาหารในการขับเคลื่อนสังคมไทยอย่างยั่งยืน": 15, "The Role of Wood and Bamboo as a Sustainable Construction Material": 6, "[Online] The Role of Wood and Bamboo as a Sustainable Construction Material": 27, "ปฏิวัติสุขภาพจากภายใน: ออกแบบสุขภาพลำไส้ด้วยเทคโนโลยีใหม่เฉพาะบุคคล": 43, "เครื่องมือดิจิทัลสู่ Net Zero: จากนโยบายสู่การจัดการคาร์บอนในสถานประกอบการ": 48, "Circular Economy as a Business Opportunity drives Economic Growth": 47, "Climate Justice & Greenwashing: From Lab to Law": 45, "เทคโนโลยีและนวัตกรรมการเพาะเลี้ยงสัตว์น้ำสู่อุตสาหกรรมคาร์บอนต่ำ": 78, "CCUS และการกำจัดคาร์บอนในการปฏิบัติจริง เพื่อพาไทยสู่ Net-Zero": 37, "ความก้าวหน้าของเทคโนโลยี CCUS และบทบาทของเครือข่ายพันธมิตรด้านการดักจับ ใช้ประโยชน์ และกักเก็บคาร์บอน": 33, "การพัฒนาอุตสาหกรรมไทยด้วยนวัตกรรมสีเขียว เพื่อมุ่งสู่สังคมแห่งอนาคตที่ยั่งยืน": 35, "เทคโนโลยีวัสดุขั้นสูงเพื่ออุตสาหกรรมสีเขียวและเมืองยั่งยืน": 26, "จากห้องปฏิบัติการสู่การใช้งานจริง: เทคโนโลยีเอนไซม์และจุลินทรีย์เพื่อขับเคลื่อนอุตสาหกรรมชีวภาพ": 48, "CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 33, "[Online] CE Design in Action: พลิกโฉมอุตสาหกรรมไทยสู่เศรษฐกิจหมุนเวียน": 30, "วิศวกรรมเพื่ออนาคต: การผลิตยุคใหม่และความท้าทายด้านความยั่งยืน": 16, "Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 3, "[Online] Safety Standard and interlaboratory on Nanotechnology for sustainable economy": 16, "The Great Shift: ปรับทิศทางจากชิ้นส่วนยานยนต์สู่เครื่องมือแพทย์": 43, "ฐานข้อมูลวัฏจักรชีวิตแห่งชาติ: โครงสร้างพื้นฐานเพื่อการเปลี่ยนผ่านสู่อุตสาหกรรมยั่งยืน": 19, "บริการส่งเสริมนวัตกรรม เพื่อขับเคลื่อนการเปลี่ยนผ่านสู่โมเดลอุตสาหกรรมใหม่ ด้วย ESG": 12, "เซมิคอนดักเตอร์: พลังขับเคลื่อนการเปลี่ยนผ่านประเทศไทยสู่เศรษฐกิจสีเขียวและยั่งยืน": 10, "จากนโยบายสู่การปฏิบัติ: โรงไฟฟ้าไทยกับการเปลี่ยนผ่านสู่ความเป็นกลางทางคาร์บอนที่ยั่งยืน": 25, "เจาะลึกนวัตกรรมสู้ภัย ASF: จากไวรัสกลายพันธุ์สู่วัคซีนต้นแบบและทางรอดใหม่ของฟาร์มสุกร": 42, "เทคโนโลยีและนวัตกรรมโพรไบโอติกสู่การประยุกต์ใช้ในอุตสาหกรรม": 50};
 
 function renderCompareChart(){
   const onsite = sessions.filter(s=>!s.isOnline).sort((a,b)=>b.registered-a.registered).slice(0,20);
@@ -1232,6 +1366,7 @@ function renderCompareChart(){
 
 render();
 renderCompareChart();
+renderDailyChart();
 </script>
 </body>
 </html>
